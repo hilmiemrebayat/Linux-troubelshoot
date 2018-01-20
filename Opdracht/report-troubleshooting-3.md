@@ -33,11 +33,19 @@
 We kunnen hieruit besluiten dat de network layer van de server goed geconfigureerd is.
 #### Workstation
 1. Start de VM "Workstation" en controleer of de ip-adressen toegekend en juist zijn. Dit controleer je met de commando `ip a`. Na het uitvoeren van de commando zien we dat de netwerkinterface op up staat maar dat er geen ip-adres is toegenkend.
-- Het kan zijn dat er een comminicatiefout met de DHCP Server is ontstaan. Hierdoor gaan we de netwerkinterface uitschakelen (commando: `ifdown enp0s8`) en terug inschakelen (commando: `ifup enp0s8`) en kijken of er dan een ip-adres wordt toegekend. Na het terug in schakelen van de interface hebben we een fout gekregen, namelijk "Connection activation failed". We kunnen hieruit besluiten dat er een andere probleem is. Hoogstwaarschijnlijk is er een fout met de DHCP server. Dit gaan we controleren in de transport layer".
-2. Nu gaan we de default gateway controlleren. Dit doen we met de commando `ip r`. Netwerkadapter enp0s8 heeft als default gateway 172.22.0.0/24 en enp0s3 heeft 10.0.2.0/24. Dus de default gateway klopt ook.
-3. Nu gaan we de DNS instellingen controleren. We verwachten "10.0.2.3". Om te checken voeren we de volgende commando uit: `vi /etc/resolv.conf `. We krijgen als uitvoer "nameserver: 10.0.2.3". Dus de dns-server klopt.
-We kunnen hieruit besluiten dat de network layer van de server goed geconfigureerd is.
+- Het kan zijn dat er een communicatiefout met de DHCP Server is ontstaan. Hierdoor gaan we de netwerkinterface uitschakelen (commando: `ifdown enp0s8`) en terug inschakelen (commando: `ifup enp0s8`) en kijken of er dan een ip-adres wordt toegekend. Na het terug in schakelen van de interface hebben we een fout gekregen, namelijk "Connection activation failed". We kunnen hieruit besluiten dat er een andere probleem is. Hoogstwaarschijnlijk is er een fout met de DHCP server. Dit gaan we controleren in de transport layer.
+2. Nu gaan we de default gateway controlleren. Dit doen we met de commando `ip r`. Normaal gezien zou er geen default gateway zijn aangezien er ook geen ip-adres is toegekend, maar we zullen het toch controleren. Na het uitvoeren van de commando zien we dat er geen default gateway is toegekend.
+3. Het controleren van de DNS server heeft geen zin aangezien er geen verbinding is.
+Hieruit kunnen we besluiten dat er een probleem is met de netwerk. Vermoedelijk is er een probleem met de DHCP server. Dit gaan we nu controleren in het transport layer.
+
 ### Transport Layer
+1. Eerst controleren we of dhcp actief is. Dit doen we met de commando `service dhcpd status`.  Als uitvoer krijgen we "Active : inactive (dead). Dus er is een probleem met dhcp.
+- We gaan dhcp proberen op te starten met de commando 'sudo service dhcpd start' --> Starten lukt niet. Als uitvoer wordt er gezegd dat we de logboek moeten bekijken. Na het bekijken van de logboek (commando: `sudo journalctl -xe`) kunnen we besluiten dat er een fout is met de dhcp.service.
+- We gaan controleren of er fouten aanwezig zijn in de file "dhcpd.conf". Het kan zijn dat hierdoor de dhcp service niet opstart. De dhcpd.conf bekijken we met de commando `sudo vi /etc/dhcp/dhcpd.conf`
+  - netmask was fout, moet veranderd worden van 255.0.0.0 naar 255.255.255.O
+  - 
+
+
 ### Application Layer
 ## End result
 
