@@ -93,7 +93,7 @@ bovenaan voor “Devices > Network > Connect Network Adapter 1”, wat hetzelfde
 <br><br>Er worden acceptatietests geïnstalleerd op het werkstation als het commando acceptance-tests (in /usr/local/bin),
 maar staar je niet altijd blind op de uitvoer hiervan. Ga zelf op een gestructureerde en grondige manier op zoek naar de
 oorzaak van de problemen door de geschikte commando’s te gebruiken.
-## 2 Rapportering
+## 2. Rapportering
 - Schrijf een gedetailleerd rapport ahv het bijgevoegde sjabloon (Nederlands of Engels). Gebruik telegramstijl, het is niet nodig er een doorlopende tekst (“opstel”) van te maken.
 - Gebruik correcte Markdown! Dit is een eenvoudig formaat, dus geen reden om een slecht opgemaakt rapport in te dienen.
 - De verschillende fasen in het bottom-up troubleshooting-proces worden in een eigen sectie besproken met de naam van de fase als titel.
