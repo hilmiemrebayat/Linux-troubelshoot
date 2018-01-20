@@ -35,7 +35,7 @@ eigenschappen:
 1 Je zal dus exact kunnen nagaan hoe de machines opgezet zijn, maar wees a.u.b. zo verstandig om niet te veel veronderstellingen te doen naar
 aanleiding van wat je daarin vindt. Niet veronderstellen, maar testen!
 
-![IP tabel en afbeedling](https://github.com/hilmiemrebayat/Linux-troubelshoot/upload)
+![IP tabel en afbeedling](https://github.com/hilmiemrebayat/Linux-troubelshoot/blob/master/afbeelding1.jpeg)
 ### 1.1 Vagrant-omgeving
 De opstelling wordt aangeboden in de vorm van een Vagrant-omgeving die als volgt gestructureerd is:
 $ tree
