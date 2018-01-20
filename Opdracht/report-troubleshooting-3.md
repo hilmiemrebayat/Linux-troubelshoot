@@ -20,8 +20,9 @@
 
 ## Report
 1. Linux toestenbord is ingesteld als QWERTY. Toetsenbord veranderen naar AZERTY met de commando:  `localectl set-keymap be`
-
+2. Uitschakelen van netwerkadapter 1 (NAT) bij Workstation: Ga naar de instellingen van Workstation in VirtualBox, klik daarna op adapter 1 en vink netwerkadapter inschakelen uit.
 ### Link Layer
+1. 
 ### Network Layer
 ### Transport Layer
 ### Application Layer
