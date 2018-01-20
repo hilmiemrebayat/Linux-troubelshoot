@@ -1,6 +1,5 @@
 # Labo Troubleshooting 3: LAN
 ## Enterprise Linux 17-18
-<br><br>
 Bachelor toegepaste informatica, HoGent Bedrijf en Organisatie
 <br><br>
 Studenten die na de eerste twee troubleshooting-labo’s hun bekwaamheid nog niet hebben aangetoond
@@ -18,16 +17,16 @@ In dit labo krijg je een opstelling zoals in Figuur 1, een minimaal functioneel 
 de vorm van de broncode voor een Vagrant-omgeving. Elke student krijgt individueel een verschillende opgave, zij het
 gebaseerd op dezelfde structuur. De opgave wordt doorgegeven één week voor het finale evaluatiemoment. Je kan er
 thuis aan werken en het resultaat demonstreren binnen de je toegewezen tijd op het evaluatiemoment.
-Bij vagrant up worden drie VMs, router, server en workstation, opgestart die elk geconfigureerd zijn aan de hand
+<br><br>Bij vagrant up worden drie VMs, router, server en workstation, opgestart die elk geconfigureerd zijn aan de hand
 van een shell-script1. Uiteraard zitten er fouten in de opstelling, het is jouw taak die op te sporen. De bedoeling is om er
 voor te zorgen dat het werkstation toegang krijgt zowel tot het lokale netwerk als het Internet.
-Als voorbereiding kan je eventueel zelf al een omgeving opstellen met deze specificaties. Je kan als startpunt gebruik
+<br><br>Als voorbereiding kan je eventueel zelf al een omgeving opstellen met deze specificaties. Je kan als startpunt gebruik
 maken van https://github.com/bertvv/vagrant-shell-skeleton/. Voor het configuratiescript van de router kan je baseren
 op https://github.com/HoGentTIN/elnx-sme/blob/master/scripts/router-config.sh.
-De VMs zijn aangesloten op een VirtualBox interne netwerkinterface, niet op een host-only interface. Dat betekent dat
+<br><br>De VMs zijn aangesloten op een VirtualBox interne netwerkinterface, niet op een host-only interface. Dat betekent dat
 het hostsysteem niet aangesloten is op het LAN en je dus ook niet rechtstreeks vanop je hostsysteem kan pingen naar
 de VMs.
-Het IP-adres van het LAN kan voor elke individuele opdracht verschillend zijn, maar voldoet altijd aan volgende
+<br><br>Het IP-adres van het LAN kan voor elke individuele opdracht verschillend zijn, maar voldoet altijd aan volgende
 eigenschappen:
 • Het subnetmasker is “/24”
 • De server heeft als host-deel van het IP-adres “.2”
@@ -36,15 +35,7 @@ eigenschappen:
 1 Je zal dus exact kunnen nagaan hoe de machines opgezet zijn, maar wees a.u.b. zo verstandig om niet te veel veronderstellingen te doen naar
 aanleiding van wat je daarin vindt. Niet veronderstellen, maar testen!
 
-Host Interface IP VBox Interface
-router eth0 10.0.2.15/24 (DHCP) NAT
-eth1 x.x.x.254/24 intnet
-server enp0s3 10.0.2.15/24 (DHCP) NAT
-enp0s8 x.x.x.2/24 intnet
-workstation enp0s3 – Uitgeschakeld (NAT)
-enp0s8 x.x.x.101-253/24 (DHCP) intnet
-Figure 1: Opstelling labo. Het werkstation moet de services op de server kunnen bereiken (DHCP, DNS, HTTP) en toegang
-hebben tot het Internet
+![IP tabel en afbeedling](https://github.com/hilmiemrebayat/Linux-troubelshoot/upload)
 ### 1.1 Vagrant-omgeving
 De opstelling wordt aangeboden in de vorm van een Vagrant-omgeving die als volgt gestructureerd is:
 $ tree
