@@ -6,13 +6,13 @@ Studenten die na de eerste twee troubleshooting-labo’s hun bekwaamheid nog nie
 krijgen met deze opgave nog een kans om dit te doen. Doel van deze opgave is een werkstation in een LAN
 toegang te geven tot de services op het netwerk (DNS, DHCP, web) en het internet.
 ## Contents
-### 1 Opdrachtomschrijving 1
+### 1. Opdrachtomschrijving 
 1. Vagrant-omgeving 
 2. Router 
 3. Server
 4. Werkstation
-### 2 Rapportering 3
-## 1 Opdrachtomschrijving
+### 2. Rapportering 
+## 1. Opdrachtomschrijving
 In dit labo krijg je een opstelling zoals in Figuur 1, een minimaal functioneel LAN. De opgave zal worden doorgegeven in
 de vorm van de broncode voor een Vagrant-omgeving. Elke student krijgt individueel een verschillende opgave, zij het
 gebaseerd op dezelfde structuur. De opgave wordt doorgegeven één week voor het finale evaluatiemoment. Je kan er
@@ -38,6 +38,7 @@ aanleiding van wat je daarin vindt. Niet veronderstellen, maar testen!
 ![IP tabel en afbeedling](https://github.com/hilmiemrebayat/Linux-troubelshoot/blob/master/afbeelding1.jpeg)
 ### 1.1 Vagrant-omgeving
 De opstelling wordt aangeboden in de vorm van een Vagrant-omgeving die als volgt gestructureerd is:
+```
 $ tree
 .
 ├── provisioning
@@ -55,6 +56,7 @@ $ tree
 │ └── workstation.sh
 ├── Vagrantfile
 └── vagrant-hosts.yml
+```
 De configuratie van de drie VMs gebeurt aan de hand van shellscripts die je vindt in de directory provisioning, met de
 naam van de overeenkomstige VM. Het script util.sh bevat enkele herbruikbare Bash-functies. Bestanden die naar de
 VMs gekopieerd worden vind je in een subdirectory onder provisioning/files/ met de naam van de VM.
