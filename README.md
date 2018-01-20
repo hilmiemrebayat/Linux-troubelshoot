@@ -1,15 +1,17 @@
 # Labo Troubleshooting 3: LAN
-Enterprise Linux 17-18
+## Enterprise Linux 17-18
+<br><br>
 Bachelor toegepaste informatica, HoGent Bedrijf en Organisatie
+<br><br>
 Studenten die na de eerste twee troubleshooting-labo’s hun bekwaamheid nog niet hebben aangetoond
 krijgen met deze opgave nog een kans om dit te doen. Doel van deze opgave is een werkstation in een LAN
 toegang te geven tot de services op het netwerk (DNS, DHCP, web) en het internet.
 ## Contents
 ### 1 Opdrachtomschrijving 1
-1.1 Vagrant-omgeving 
-1.2 Router 
-1.3 Server
-1.4 Werkstation
+1. Vagrant-omgeving 
+2. Router 
+3. Server
+4. Werkstation
 ### 2 Rapportering 3
 ## 1 Opdrachtomschrijving
 In dit labo krijg je een opstelling zoals in Figuur 1, een minimaal functioneel LAN. De opgave zal worden doorgegeven in
