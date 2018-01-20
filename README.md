@@ -67,22 +67,17 @@ Internet gaat. Verder heeft de router geen functies (dus geen DNS forwarding of 
 
 ### 1.3 Server
 Op server (CentOS 7) zijn drie services actief: DNS, DHCP en een webserver.
-• DNS:
-– Geïmplementeerd met Dnsmasq, een eenvoudige caching DNS service. Name resolution gebeurt op basis
-van twee bronnen:
-* eerst wordt gekeken of de opgevraagde hostnaam in /etc/hosts vermeld staat. Zo ja wordt het
-geassocieerde IP-adres teruggegeven.
-* Indien niet, wordt de query doorgegeven aan de DNS server(s) opgesomd in /etc/resolv.conf.
-– De DNS-server moet namen binnen het eigen domein (linuxlab.lan) kunnen omzetten (gedefinieerd in
-/etc/hosts)
-– De DNS-server moet ook namen van externe websites kunnen omzetten (bv. google.be, icanhazip.com, …)
-• DHCP:
-– Werkstations die zich aanmelden op het LAN krijgen een geschikt IP-adres van de DHCP-server.
-– De DHCP-server geeft ook het correcte IP-adres voor de default gateway en DNS server die werkstations
-mogen gebruiken
-• Website:
-– Een eenvoudige installatie van Apache (geen database, geen scripting) met een minimale webpagina (inhoud:
-“welcome to linuxlab.lan”)
+- DNS:
+  - Geïmplementeerd met Dnsmasq, een eenvoudige caching DNS service. Name resolution gebeurt op basis van twee bronnen:
+    - eerst wordt gekeken of de opgevraagde hostnaam in /etc/hosts vermeld staat. Zo ja wordt het geassocieerde IP-adres teruggegeven.
+    - Indien niet, wordt de query doorgegeven aan de DNS server(s) opgesomd in /etc/resolv.conf.
+  - De DNS-server moet namen binnen het eigen domein (linuxlab.lan) kunnen omzetten (gedefinieerd in /etc/hosts)
+  - De DNS-server moet ook namen van externe websites kunnen omzetten (bv. google.be, icanhazip.com, …)
+- DHCP:
+  - Werkstations die zich aanmelden op het LAN krijgen een geschikt IP-adres van de DHCP-server.
+  - De DHCP-server geeft ook het correcte IP-adres voor de default gateway en DNS server die werkstations mogen gebruiken
+- Website:
+  - Een eenvoudige installatie van Apache (geen database, geen scripting) met een minimale webpagina (inhoud: “welcome to linuxlab.lan”)
 ### 1.4 Werkstation
 Het werkstation (CentOS 7) mag enkel aangesloten zijn op het interne netwerk. Dat betekent dat na opzetten van de
 VM met Vagrant de verbinding via de NAT-interface moet verbroken worden. De VM kan dan niet meer met vagrant
