@@ -19,7 +19,7 @@
     - describe any error messages that still remain
 
 ## Report
-1. Linux toestenbord is ingesteld als QWERTY. Eerst zal ik dat veranderen in AZERTY om geen typfouten te maken. Dit doe je door de volgende commando te geven:  `localectl set-keymap be`
+1. Linux toestenbord is ingesteld als QWERTY. Toetsenbord veranderen naar AZERTY met de commando:  `localectl set-keymap be`
 
 ### Link Layer
 ### Network Layer
