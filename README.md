@@ -82,15 +82,15 @@ Op server (CentOS 7) zijn drie services actief: DNS, DHCP en een webserver.
 Het werkstation (CentOS 7) mag enkel aangesloten zijn op het interne netwerk. Dat betekent dat na opzetten van de
 VM met Vagrant de verbinding via de NAT-interface moet verbroken worden. De VM kan dan niet meer met vagrant
 aangestuurd worden en je zal dus moeten inloggen op deze machine vanuit de VirtualBox GUI.
-Na opzetten van het netwerk met vagrant up ga je naar de VirtualBox GUI en selecteer je de VM lan_workstation_...
+<br><br>Na opzetten van het netwerk met vagrant up ga je naar de VirtualBox GUI en selecteer je de VM lan_workstation_...
 in de groep “lan”. Klik in de commandoknoppenbalk bovenaan op “Show”. In het venster van de VM kies je in het menu
 bovenaan voor “Devices > Network > Connect Network Adapter 1”, wat hetzelfde effect heeft als het selectievakje
 “Cable connected” uit te zetten.
-Je moet kunnen aantonen dat het werkstation:
+<br><br>Je moet kunnen aantonen dat het werkstation:
 • enkel aangesloten is op het interne netwerk
 • de lokale website kan bekijken (www.linuxlab.lan)
 • een site op het Internet kan bekijken (vb. icanhazip.com)
-Er worden acceptatietests geïnstalleerd op het werkstation als het commando acceptance-tests (in /usr/local/bin),
+<br><br>Er worden acceptatietests geïnstalleerd op het werkstation als het commando acceptance-tests (in /usr/local/bin),
 maar staar je niet altijd blind op de uitvoer hiervan. Ga zelf op een gestructureerde en grondige manier op zoek naar de
 oorzaak van de problemen door de geschikte commando’s te gebruiken.
 ## 2 Rapportering
