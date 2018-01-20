@@ -87,29 +87,23 @@ in de groep “lan”. Klik in de commandoknoppenbalk bovenaan op “Show”. In
 bovenaan voor “Devices > Network > Connect Network Adapter 1”, wat hetzelfde effect heeft als het selectievakje
 “Cable connected” uit te zetten.
 <br><br>Je moet kunnen aantonen dat het werkstation:
-• enkel aangesloten is op het interne netwerk
-• de lokale website kan bekijken (www.linuxlab.lan)
-• een site op het Internet kan bekijken (vb. icanhazip.com)
+- enkel aangesloten is op het interne netwerk
+- de lokale website kan bekijken (www.linuxlab.lan)
+- een site op het Internet kan bekijken (vb. icanhazip.com)
 <br><br>Er worden acceptatietests geïnstalleerd op het werkstation als het commando acceptance-tests (in /usr/local/bin),
 maar staar je niet altijd blind op de uitvoer hiervan. Ga zelf op een gestructureerde en grondige manier op zoek naar de
 oorzaak van de problemen door de geschikte commando’s te gebruiken.
 ## 2 Rapportering
-• Schrijf een gedetailleerd rapport ahv het bijgevoegde sjabloon (Nederlands of Engels). Gebruik telegramstijl, het
-is niet nodig er een doorlopende tekst (“opstel”) van te maken.
-• Gebruik correcte Markdown! Dit is een eenvoudig formaat, dus geen reden om een slecht opgemaakt rapport in
-te dienen.
-• De verschillende fasen in het bottom-up troubleshooting-proces worden in een eigen sectie besproken met de
-naam van de fase als titel.
-• Elke stap is gedetailleerd beschreven:
-– Wat getest wordt;
-
-– Gebruikte commando’s, inclusief opties en argumenten, en/of absolute paden naar de configuratiebestanden
-die nagekeken moeten worden;
-– De verwachte uitvoer van het commando/inhoud van het configuratiebestand (enkel relevante delen zijn
+- Schrijf een gedetailleerd rapport ahv het bijgevoegde sjabloon (Nederlands of Engels). Gebruik telegramstijl, het is niet nodig er een doorlopende tekst (“opstel”) van te maken.
+- Gebruik correcte Markdown! Dit is een eenvoudig formaat, dus geen reden om een slecht opgemaakt rapport in te dienen.
+- De verschillende fasen in het bottom-up troubleshooting-proces worden in een eigen sectie besproken met de naam van de fase als titel.
+- Elke stap is gedetailleerd beschreven:
+  - Wat getest wordt;
+  - Gebruikte commando’s, inclusief opties en argumenten, en/of absolute paden naar de configuratiebestanden die nagekeken moeten worden;
+  - De verwachte uitvoer van het commando/inhoud van het configuratiebestand (enkel relevante delen zijn
 voldoende);
-– Als de bekomen uitvoer verschilt van de verwachte, geef de vermoedelijke oorzaak en beschrijf hoe je dit
-hebt opgelost door opgave van de exacte commando’s en/of wijzigingen in configuratiebestanden.
-• Beschrijf het eindresultaat:
-– Wat werkt, wat werkt niet?
-– Kopieer een transcriptie van de uitvoer van de acceptatietests op het werkstation
-– Beschrijf enige foutboodschappen die nog overblijven
+  -Als de bekomen uitvoer verschilt van de verwachte, geef de vermoedelijke oorzaak en beschrijf hoe je dit hebt opgelost door opgave van de exacte commando’s en/of wijzigingen in configuratiebestanden.
+- Beschrijf het eindresultaat:
+  - Wat werkt, wat werkt niet?
+  - Kopieer een transcriptie van de uitvoer van de acceptatietests op het werkstation
+  - Beschrijf enige foutboodschappen die nog overblijven
