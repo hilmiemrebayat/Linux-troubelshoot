@@ -78,6 +78,10 @@ yum -y install dnsmasq
 info 'Enabling service'
 ensure_service_enabled dnsmasq.service
 
+info "Applying firewall rules"
+firewall-cmd --permanent --add-service dns
+systemctl restart firewalld.service
+
 if files_differ "${hosts_file}" /etc/hosts; then
   info "Copying hosts file"
   cp "${hosts_file}" /etc/hosts
