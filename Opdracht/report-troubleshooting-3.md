@@ -78,7 +78,7 @@ Besluit: DHCP server werkt nu zonder problemen
 #### HTTP
 1. We controleren of httpd actief is, dit doen we met de commando `sudo systemctl status httpd`. Na het uitvoeren van de commando zien we dat het niet actief is. Om het te activeren gebruiken we de commando `sudo systemctl start httpd`, wat normaalgezien zonder problemen moet lukken. Na het uitvoeren van de commando zien we dat httpd zonder problemen start. 
 2. Aangezien httpd niet start tijdens het opstarten van de server moeten we de volgende commando uitvoeren zodat het wel start tijdens het opstarten van de server: `sudo systemctl enable httpd` Na het uitvoeren en opnieuw starten van de server (commando `reboot`) controleren we nog eens de status met de commando `sudo systemctl status httpd` en zien we dat httpd automatisch is opgestard.
-3. Als laatst controleren we met de commando  `sudo iptables -L -n` controleren of de poort (poort 80) voor httpd open staan. Na het uitvoeren van de commando zien we dat de firewall goed is geconfigureerd. 
+3. Als laatst controleren we met de commando  `sudo iptables -L -n`  of de poort (poort 80) voor httpd open staan. Na het uitvoeren van de commando zien we dat de firewall goed is geconfigureerd. 
 
 4. Nu alles gecontrolleerd is gaan we vanuit de werkstation de acceptance-test uitvoeren en kijken of de website op de server bereikbaar is. Na het uitvoeren zien we dat de website niet bereikbaar is. Hoogstwaarschijnlijk is er een probleem met de DNS. Dit gaan we controleren in het volgende hoofdstuk.
 
