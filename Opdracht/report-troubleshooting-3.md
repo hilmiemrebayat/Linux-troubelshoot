@@ -85,6 +85,11 @@ Besluit: DHCP server werkt nu zonder problemen
 Besuit: Apache (httpd) werkt zonder problemen maar website is niet bereikbaar.
 
 #### DNS
+1. We controleren of dnsmasq actief is, dit doen we met de commando `sudo systemctl status dnsmasq`. Na het uitvoeren van de commando zien we dat dns actief is.
+2. Aangezien dnsmasq actief is en werd getart tijdens het opstarten van de server, moeten we met de service zelf niet doen.
+3. We gaan nu firewall controleren. Poort 53 moet open staan voor DNS. Dit controleren we met de commando  `sudo iptables -L -n`. Na het uitvoeren van de commando zien we dat de poort niet openstaat en hierdoor geen verkeer wordt doorgelaten. e activeren de poort met de commando `sudo firewall-cmd --add-service=dns --permanent` en herstarten hierna de firewall met de commando `sudo firewall-cmd --reload`.
+4. nu gaan we de acceptance-test opnieuw uitvoeren en kijken of de website bereikbaar is. Na het uitoveren zien we dat linuxlab.lan bereikbaar is, maar we niet op het internet kunnen. Dus er zijn nog problemen aanwezig. We gaan dit als volgt controleren en oplossen:
+
 
 
 
