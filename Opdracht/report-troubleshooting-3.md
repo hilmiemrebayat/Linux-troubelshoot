@@ -41,10 +41,25 @@ Hieruit kunnen we besluiten dat er een probleem is met de netwerk. Vermoedelijk 
 ### Transport Layer
 1. Eerst controleren we of dhcp actief is. Dit doen we met de commando `service dhcpd status`.  Als uitvoer krijgen we "Active : inactive (dead). Dus er is een probleem met dhcp.
 - We gaan dhcp proberen op te starten met de commando 'sudo service dhcpd start' --> Starten lukt niet. Als uitvoer wordt er gezegd dat we de logboek moeten bekijken. Na het bekijken van de logboek (commando: `sudo journalctl -xe`) kunnen we besluiten dat er een fout is met de dhcp.service.
-- We gaan controleren of er fouten aanwezig zijn in de file "dhcpd.conf". Het kan zijn dat hierdoor de dhcp service niet opstart. De dhcpd.conf bekijken we met de commando `sudo vi /etc/dhcp/dhcpd.conf`
-  - netmask was fout, moet veranderd worden van 255.0.0.0 naar 255.255.255.O
-  - 
+- We gaan controleren of er fouten aanwezig zijn in de file "dhcpd.conf". Het kan zijn dat hierdoor de dhcp service niet opstart. De dhcpd.conf bekijken we met de commando `sudo vi /etc/dhcp/dhcpd.conf`. Na het bekijken zien we dat er fouten aanwezig zijn. Verander dhcpd.conf als volgt:
+```
+# dhcpd.conf -- linuxlab.lan
 
+authoritative;
+
+subnet 172.20.0.0 netmask 255.255.255.0 {
+  interface enp0s8;
+  range 172.20.0.101 172.20.0.253;
+
+  option domain-name "linuxlab.lan";
+  option routers 172.20.0.254;
+  option domain-name-servers 172.22.0.2;
+
+  default-lease-time 14400;
+  max-lease-time 21600;
+}
+
+```
 
 ### Application Layer
 ## End result
