@@ -72,19 +72,20 @@ subnet 172.22.0.0 netmask 255.255.255.0 {
 ```
 - Na het wijzigen van de dhcpd.conf, herstart je de dhcp service met de commando `sudo systemctl restart dhcpd`.Na het uitvoeren van de commando is de dhcp service succesvol gestart en kan men zien dat het actief is. Om te cotroleren of het echt werkt gaan we de interface van de workstation uit (commando: `ifdown enp0s8`) en terug inschakelen (commando: `ifup enp0s8`)en kijken of er automatisch een ip-adres is toegekend. Na het uit en terug inschakelen zien we dat er een ip-adres is toegekend en kunnen we dus besluiten dat de dhcp service werkt.
 
-- Als laatst gaan we ook de firewall controleren met de commando `sudo iptables -L -n`. De poort 67 moet normaalgezien open staan. Na het uitvoeren van de commando zien we dat de firewall goed is geconfigureerd.
+2. Als laatst gaan we ook de firewall controleren met de commando `sudo iptables -L -n`. De poort 67 moet normaalgezien open staan. Na het uitvoeren van de commando zien we dat de firewall goed is geconfigureerd.
 
 Besluit: DHCP server werkt nu zonder problemen
 #### HTTP
-- We controleren of httpd actief is, dit doen we met de commando `sudo systemctl status httpd`. Na het uitvoeren van de commando zien we dat het niet actief is. Om het te activeren gebruiken we de commando `sudo systemctl start httpd`, wat normaalgezien zonder problemen moet lukken. Na het uitvoeren van de commando zien we dat httpd zonder problemen start. 
-- Aangezien httpd niet start tijdens het opstarten van de server moeten we de volgende commando uitvoeren zodat het wel start tijdens het opstarten van de server: `sudo systemctl enable httpd` Na het uitvoeren en opnieuw starten van de server (commando `reboot`) controleren we nog eens de status met de commando `sudo systemctl status httpd` en zien we dat httpd automatisch is opgestard.
-- Als laatst controleren we met de commando  `sudo iptables -L -n` controleren of de poort (poort 80) voor httpd open staan. Na het uitvoeren van de commando zien we dat de firewall goed is geconfigureerd. 
+1. We controleren of httpd actief is, dit doen we met de commando `sudo systemctl status httpd`. Na het uitvoeren van de commando zien we dat het niet actief is. Om het te activeren gebruiken we de commando `sudo systemctl start httpd`, wat normaalgezien zonder problemen moet lukken. Na het uitvoeren van de commando zien we dat httpd zonder problemen start. 
+2. Aangezien httpd niet start tijdens het opstarten van de server moeten we de volgende commando uitvoeren zodat het wel start tijdens het opstarten van de server: `sudo systemctl enable httpd` Na het uitvoeren en opnieuw starten van de server (commando `reboot`) controleren we nog eens de status met de commando `sudo systemctl status httpd` en zien we dat httpd automatisch is opgestard.
+3. Als laatst controleren we met de commando  `sudo iptables -L -n` controleren of de poort (poort 80) voor httpd open staan. Na het uitvoeren van de commando zien we dat de firewall goed is geconfigureerd. 
 
-- Nu alles gecontrolleerd is gaan we vanuit de werkstation de acceptance-test uitvoeren en kijken of de website op de server bereikbaar is. Na het uitvoeren zien we dat de website niet bereikbaar is. Hoogstwaarschijnlijk is er een probleem met de DNS. Dit gaan we controleren in het volgende hoofdstuk.
+4. Nu alles gecontrolleerd is gaan we vanuit de werkstation de acceptance-test uitvoeren en kijken of de website op de server bereikbaar is. Na het uitvoeren zien we dat de website niet bereikbaar is. Hoogstwaarschijnlijk is er een probleem met de DNS. Dit gaan we controleren in het volgende hoofdstuk.
 
 Besuit: Apache (httpd) werkt zonder problemen maar website is niet bereikbaar.
 
 #### DNS
+
 
 
 
