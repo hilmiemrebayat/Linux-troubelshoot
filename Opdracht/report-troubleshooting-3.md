@@ -47,9 +47,9 @@ Hieruit kunnen we besluiten dat er een probleem is met de netwerk. Vermoedelijk 
 
 authoritative;
 
-subnet 172.20.0.0 netmask 255.255.255.0 {
+subnet 172.22.0.0 netmask 255.255.255.0 {
   interface enp0s8;
-  range 172.20.0.101 172.20.0.253;
+  range 172.22.0.101 172.22.0.253;
 
   option domain-name "linuxlab.lan";
   option routers 172.20.0.254;
