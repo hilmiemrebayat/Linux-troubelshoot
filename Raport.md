@@ -137,7 +137,7 @@ Alles is goed geconfigureerd, de werkstation moet normaal gezien werken. We gaan
 
 ## End result
 Alles is geslaagd:
-
+[Uitslag test]!(https://github.com/hilmiemrebayat/Linux-troubelshoot/blob/master/Afbeeldingen/test-troubleshoot.jpeg)
 ## Resources
 - https://wiki.vyos.net/wiki/User_Guide
 - https://nims11.wordpress.com/2013/05/22/using-hostapd-with-dnsmasq-to-create-virtual-wifi-access-point-in-linux/
