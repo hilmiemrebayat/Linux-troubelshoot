@@ -1,4 +1,0 @@
-172.22.0.2    server server.linuxlab.lan www.linuxlab.lan
-172.20.0.254  gateway router gateway.linuxlab.lan router.linuxlab.lan
-127.0.0.1     localhost localhost.localdomain localhost4 localhost4.localdomain4
-::1           localhost localhost.localdomain localhost6 localhost6.localdomain6
