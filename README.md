@@ -28,11 +28,11 @@ het hostsysteem niet aangesloten is op het LAN en je dus ook niet rechtstreeks v
 de VMs.
 <br><br>Het IP-adres van het LAN kan voor elke individuele opdracht verschillend zijn, maar voldoet altijd aan volgende
 eigenschappen:
-• Het subnetmasker is “/24”
-• De server heeft als host-deel van het IP-adres “.2”
-• De router heeft als host-deel van het IP-adres “.254”
-• De DHCP-server deelt IP-adressen uit van .101 tot en met .253
-1 Je zal dus exact kunnen nagaan hoe de machines opgezet zijn, maar wees a.u.b. zo verstandig om niet te veel veronderstellingen te doen naar
+- Het subnetmasker is “/24”
+- De server heeft als host-deel van het IP-adres “.2”
+- De router heeft als host-deel van het IP-adres “.254”
+- De DHCP-server deelt IP-adressen uit van .101 tot en met .253
+Je zal dus exact kunnen nagaan hoe de machines opgezet zijn, maar wees a.u.b. zo verstandig om niet te veel veronderstellingen te doen naar
 aanleiding van wat je daarin vindt. Niet veronderstellen, maar testen!
 
 ![IP tabel en afbeedling](https://github.com/hilmiemrebayat/Linux-troubelshoot/blob/master/Afbeeldingen/afbeelding1.jpeg)
