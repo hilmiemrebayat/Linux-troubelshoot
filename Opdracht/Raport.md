@@ -24,7 +24,113 @@
 ### Link Layer
 1. Open de instellingen van Workstation, Server en router in VirtualBox. Klik daarna op "Netwerk" en kijk of "Netwerkadapter inschakelen" en "kabel aangesloten" (kan je terug vinden onder geavanceerd) is aangevinkt bij de drie VM's (behalve bij workstation moet adapter 1 uitgevinkt staan). Bij mij zijn alle adapters ingeschakeld en aangesloten, dus in het link layer is er geen probleem. 
 ### Network Layer
+#### Server
+1. IP-adres
+- Commando: ip a
+- Verwachting: 172.20.0.2/24 (x.x.x.2/24) en 10.0.2.15/24
+- Besluit: Ip-adres is fout, moet gewijzigd worden met de commando `vim /etc/sysconfig/network-scripts/ifcfg-enp0s8` naar 172.20.0.2
+2. Default Gateway
+- Commando: ip r
+- Verwachting: 10.0.2.2
+- Besluit: Juist
+3. DNS
+- Commando: vi /etc/resolv.conf
+- Verwachting: 10.0.2.3
+- Besluit: Juist
 
+#### Router
+1. IP-adres
+- Commando: ip a
+- Verwachting: 172.20.0.254/24 (x.x.x.2/24) en 10.0.2.15/24
+- Besluit: Subnetmask is fout, moet van /8 naar /24 gewijzigd worden.
+2. Default Gateway
+- Commando: ip r
+- Verwachting: 10.0.2.2
+- Besluit: Juist
 
+#### Wekstation
+1. IP-adres
+- Commando: ip a
+- Verwachting: 172.20.0.X/24 
+- Besluit: Geen ip-adres, waarschijnlijk fout met DHCP
+2. Default Gateway
+- Commando: ip r
+- Verwachting: 172.20.0.254
+- Besluit: Geen default gateway, waarschijnlijk fout met DHCP
+3. DNS
+- Commando: vi /etc/resolv.conf
+- Verwachting: 172.20.0.2
+- Besluit: Geen DNS, waarschijnlijk fout met DHCP
 
+### Transport layer
+#### DHCP
+1. Status controleren
+- Commando: sudo systemctl status dhcpd
+- Verwachting: Inactief
+- Besluit: Is inactief, proberen te activeren met `sudo systemctl start dhcpd` lunkt niet. -> Fout
+- Oplossing: 
+  - Kijken naar dhcpd.conf met commando `sudo vi /etc/dhcp/dhcpd.conf`
+  - Subnet, option router en dns is fout. Bestand wijzigen als volgt:
+```
+  # dhcpd.conf -- linuxlab.lan
+
+authoritative;
+
+subnet 172.20.0.0 netmask 255.255.255.0 {
+  interface enp0s8;
+  range 172.20.0.101 172.20.0.253;
+
+  option domain-name "linuxlab.lan";
+  
+  option routers 172.20.0.254;
+  option domain-name-servers 172.20.0.2;
+
+  default-lease-time 14400;
+  max-lease-time 21600;
+}
+
+```
+  - Server opnieuw opstarten (commando: `reboot`) en daarna DHCP opniew opstarten met commando `sudo systemctl start dhcpd`.
+  - Besluit: DHCP werkt
+2. Firewall controleren
+Commando: `sudo firewall-cmd --list-all`
+Verwachting: dhcp in services
+Besluit: Firewall is geconfigureerd
+
+#### HTTP (Apahe)
+1. Status controleren
+- Commando: sudo systemctl status httpd
+- Verwachting: Inactief
+- Besluit: Is inactief, proberen te activeren met `sudo systemctl start httpd`. Activeren is gelukt. Zo te zien wordt het niet automatisch gestart tijdens het starten van de server.
+- Oplossing: commando `sudo systemctl enable httpd` uitvoeren
+2. Firewall controleren
+Commando: `sudo firewall-cmd --list-all`
+Verwachting: httpd in services
+Besluit: Firewall is geconfigureerd
+#### DNS 
+1. Status controleren
+- Commando: sudo systemctl status dnsmasq
+- Verwachting: Actief
+- Besluit: Geen probleem
+2. Firewall controleren
+Commando: `sudo firewall-cmd --list-all`
+Verwachting: dns in services
+Besluit: Niets terug gevonden
+Oplossing: commando `sudo firewall-cmd --add-service=dns --permanent` en daarna `sudo firewall-cmd --reload` uitvoeren. 
+3. etc/hosts controleren
+- Commando: `sudo vi /etc/hots`
+- Verwachting: Drie ip-adressen (172.20.0.2,172.20.0.254 en 127.0.0.1) met hun namen
+- Besluit: IP-adres van server is verkeerd, moet gewijzigd worden van 172.22.0.2 naar 172.20.0.2.
+#### Server rebooten om te controleren of alle services automatisch opstarten
+1. Commando: `reboot` en daarna `sudo systemctl status dhcpd`,`sudo systemctl status httpd` en `sudo systemctl status dnsmasq`
+2. Verwachting: Alles moet actief zijn
+3. Besluit: Alles is actief
+
+#### Algemeen besluit
+Alles is goed geconfigureerd, de werkstation moet normaal gezien werken. We gaan dit controleren in het application layer. 
+
+### Application Layer
+Commando: `/usr/local/bin/acceptance-tests`
+Verwachting: Alle testen moeten slagen
+Besluit: 6/7 testen zijn geslaagd. De website linuxlab.lan is niet bereikbaar. Dit gaan we oplossen. 
 
