@@ -7,10 +7,10 @@ krijgen met deze opgave nog een kans om dit te doen. Doel van deze opgave is een
 toegang te geven tot de services op het netwerk (DNS, DHCP, web) en het internet.
 ## Contents
 ### 1. Opdrachtomschrijving 
-1.1. Vagrant-omgeving 
-1.2. Router 
-1.3. Server
-1.4. Werkstation
+1. Vagrant-omgeving 
+2. Router 
+3. Server
+4. Werkstation
 ### 2. Rapportering 
 ## 1. Opdrachtomschrijving
 In dit labo krijg je een opstelling zoals in Figuur 1, een minimaal functioneel LAN. De opgave zal worden doorgegeven in
