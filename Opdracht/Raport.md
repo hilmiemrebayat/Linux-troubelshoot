@@ -26,7 +26,7 @@
 ### Network Layer
 #### Server
 1. IP-adres
-- Commando: `ip a
+- Commando: `ip a`
 - Verwachting: 172.20.0.2/24 (x.x.x.2/24) en 10.0.2.15/24
 - Besluit: Ip-adres is fout, moet gewijzigd worden met de commando `vim /etc/sysconfig/network-scripts/ifcfg-enp0s8` naar 172.20.0.2
 2. Default Gateway
