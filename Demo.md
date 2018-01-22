@@ -4,6 +4,7 @@
 - sudo systemctl status dhcp
 - sudo systemctl status httpd
 - sudo systemctl status dnsmasq
+## Workstation
 2. Start workstation en voer de volgende commando's uit:
 - ip a
 - ip r
