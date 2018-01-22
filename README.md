@@ -7,10 +7,10 @@ krijgen met deze opgave nog een kans om dit te doen. Doel van deze opgave is een
 toegang te geven tot de services op het netwerk (DNS, DHCP, web) en het internet.
 ## Contents
 ### 1. Opdrachtomschrijving 
-1. Vagrant-omgeving 
-2. Router 
-3. Server
-4. Werkstation
+1.1. Vagrant-omgeving 
+1.2. Router 
+1.3. Server
+1.4. Werkstation
 ### 2. Rapportering 
 ## 1. Opdrachtomschrijving
 In dit labo krijg je een opstelling zoals in Figuur 1, een minimaal functioneel LAN. De opgave zal worden doorgegeven in
@@ -36,7 +36,7 @@ eigenschappen:
 aanleiding van wat je daarin vindt. Niet veronderstellen, maar testen!
 
 ![IP tabel en afbeedling](https://github.com/hilmiemrebayat/Linux-troubelshoot/blob/master/Afbeeldingen/afbeelding1.jpeg)
-### 1.1 Vagrant-omgeving
+### 1.1. Vagrant-omgeving
 De opstelling wordt aangeboden in de vorm van een Vagrant-omgeving die als volgt gestructureerd is:
 ```
 $ tree
@@ -60,12 +60,12 @@ $ tree
 De configuratie van de drie VMs gebeurt aan de hand van shellscripts die je vindt in de directory provisioning, met de
 naam van de overeenkomstige VM. Het script util.sh bevat enkele herbruikbare Bash-functies. Bestanden die naar de
 VMs gekopieerd worden vind je in een subdirectory onder provisioning/files/ met de naam van de VM.
-### 1.2 Router
+### 1.2. Router
 De router (VyOS) verbindt het LAN (gesimuleerd met een VirtualBox internal network) met het Internet via een VirtualBox
 NAT-interface. De router doet zelf ook aan Network Address Translation voor netwerkverkeer dat vanuit het LAN naar het
 Internet gaat. Verder heeft de router geen functies (dus geen DNS forwarding of DHCP).
 
-### 1.3 Server
+### 1.3. Server
 Op server (CentOS 7) zijn drie services actief: DNS, DHCP en een webserver.
 - DNS:
   - Geïmplementeerd met Dnsmasq, een eenvoudige caching DNS service. Name resolution gebeurt op basis van twee bronnen:
@@ -78,7 +78,7 @@ Op server (CentOS 7) zijn drie services actief: DNS, DHCP en een webserver.
   - De DHCP-server geeft ook het correcte IP-adres voor de default gateway en DNS server die werkstations mogen gebruiken
 - Website:
   - Een eenvoudige installatie van Apache (geen database, geen scripting) met een minimale webpagina (inhoud: “welcome to linuxlab.lan”)
-### 1.4 Werkstation
+### 1.4. Werkstation
 Het werkstation (CentOS 7) mag enkel aangesloten zijn op het interne netwerk. Dat betekent dat na opzetten van de
 VM met Vagrant de verbinding via de NAT-interface moet verbroken worden. De VM kan dan niet meer met vagrant
 aangestuurd worden en je zal dus moeten inloggen op deze machine vanuit de VirtualBox GUI.
