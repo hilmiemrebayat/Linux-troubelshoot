@@ -135,4 +135,22 @@ Alles is goed geconfigureerd, de werkstation moet normaal gezien werken. We gaan
 - Verwachting: Alle testen moeten slagen
 - Besluit: 7/7 testen slagen
 
- 
+## End result
+Alles is geslaagd:
+
+## Resources
+- https://wiki.vyos.net/wiki/User_Guide
+- https://nims11.wordpress.com/2013/05/22/using-hostapd-with-dnsmasq-to-create-virtual-wifi-access-point-in-linux/
+- https://www.youtube.com/watch?v=sMyu2Wf7RDQ
+- https://www.isc.org/wp-content/uploads/2017/08/dhcp41conf.html
+- https://prefetch.net/articles/iscdhcpd.html
+- https://unix.stackexchange.com/questions/173875/why-cant-i-start-isc-dhcp-server-upon-installation
+- https://unix.stackexchange.com/questions/33376/debian-dhcpd-no-subnet-declaration-for-eth0
+- https://askubuntu.com/questions/536531/dhcp-server-wont-start-gives-not-configured-to-listen-on-any-interfaces-eve
+- https://www.unixmen.com/how-to-install-dhcp-server-in-centos-and-ubuntu/
+- https://help.ubuntu.com/community/isc-dhcp-server
+- https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s1-networkscripts-files.html
+- https://www.tecmint.com/command-line-web-browser-download-file-in-linux/
+- https://askubuntu.com/questions/351168/diffrence-between-the-dns-setting-in-etc-resolv-conf-and-etc-network-interfaces
+- https://www.liquidweb.com/kb/how-to-install-apache-on-centos-7/
+- https://www.centos.org/forums/viewtopic.php?t=12497
