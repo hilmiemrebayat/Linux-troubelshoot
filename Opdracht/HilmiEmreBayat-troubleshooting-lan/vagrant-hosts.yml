@@ -28,7 +28,7 @@
 
 - name: router
   ip: 172.20.0.254
-  netmask: 255.0.0.0
+  netmask: 255.255.255.0
   intnet: true
   box: bertvv/vyos116
 
